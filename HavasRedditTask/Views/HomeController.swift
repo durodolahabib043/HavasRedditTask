@@ -56,6 +56,9 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         cell.titleText.text = title
         cell.voteContText.text = "\(likes)"
         cell.commentText.text = "\(comments)"
+        let sdsd = RedditObjectiveCModel()
+
+        sdsd.commnets = ""
 
         cell.child = redditData
         return cell
