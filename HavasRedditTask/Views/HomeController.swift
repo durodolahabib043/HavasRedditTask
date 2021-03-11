@@ -48,18 +48,17 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as! RedditViewCell
 
-        cell.voteContText.text = "2"
-        guard let data = redditArray[indexPath.row].data?.title else {
-            print("cellForRowAt")
+        guard let redditData = redditArray[indexPath.row].data, let title = redditData.title,
+              let likes = redditData.score, let comments = redditData.numComments
+        else {
             return cell
         }
-        cell.titleText.text = data
-        return cell
-    }
+        cell.titleText.text = title
+        cell.voteContText.text = "\(likes)"
+        cell.commentText.text = "\(comments)"
 
-    /// remove and use autolayout
-    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return 200
+        cell.child = redditData
+        return cell
     }
 
     func didFetchDataSuccessfully(reddit: Reddit22) {

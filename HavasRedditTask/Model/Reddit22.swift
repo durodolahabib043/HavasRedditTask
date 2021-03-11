@@ -21,7 +21,7 @@ struct Reddit22Data: Codable {
     let dist: Int?
     let children: [Child]?
     let after: String?
-    let before: JSONNull?
+    let before: String?
 }
 
 // MARK: - Child
@@ -34,10 +34,10 @@ struct Child: Codable {
 // MARK: - ChildData
 
 struct ChildData: Codable {
-    let approvedAtUTC: JSONNull?
+    let approvedAtUTC: String?
     let subreddit, selftext, authorFullname: String?
     let saved: Bool?
-    let modReasonTitle: JSONNull?
+    let modReasonTitle: String?
     let gilded: Int?
     let clicked: Bool?
     let title: String?
@@ -64,12 +64,12 @@ struct ChildData: Codable {
     let userReports: [JSONAny]?
     let secureMedia: Media?
     let isRedditMediaDomain, isMeta: Bool?
-    let category: JSONNull?
+    let category: String?
     let secureMediaEmbed: MediaEmbed?
     let linkFlairText: String?
     let canModPost: Bool?
     let score: Int?
-    let approvedBy: JSONNull?
+    let approvedBy: String?
     let authorPremium: Bool?
     let thumbnail: String?
     let edited: Edited? ////
@@ -79,20 +79,20 @@ struct ChildData: Codable {
     let postHint: String?
     let contentCategories: [String]?
     let isSelf: Bool?
-    let modNote: JSONNull?
+    let modNote: String?
     let created: Int?
     let linkFlairType: String?
     let wls: Int?
-    let removedByCategory, bannedBy: JSONNull?
+    let removedByCategory, bannedBy: String?
     let authorFlairType: String?
     let domain: String?
     let allowLiveComments: Bool?
     let selftextHTML: String?
-    let likes: JSONNull?
+    let likes: String?
     let suggestedSort: String?
-    let bannedAtUTC: JSONNull?
+    let bannedAtUTC: String?
     let urlOverriddenByDest: String?
-    let viewCount: JSONNull?
+    let viewCount: String?
     let archived, noFollow, isCrosspostable, pinned: Bool?
     let over18: Bool?
     let preview: DataPreview?
@@ -102,14 +102,14 @@ struct ChildData: Codable {
     let authorFlairText: String?
     let treatmentTags: [JSONAny]?
     let visited: Bool?
-    let removedBy, numReports: JSONNull?
+    let removedBy, numReports: String?
     let distinguished: String?
     let subredditID: String?
-    let modReasonBy, removalReason: JSONNull?
+    let modReasonBy, removalReason: String?
     let linkFlairBackgroundColor: String?
     let id: String?
     let isRobotIndexable: Bool?
-    let reportReasons: JSONNull?
+    let reportReasons: String?
     let author: String?
     let discussionType: String?
     let numComments: Int?
@@ -118,7 +118,7 @@ struct ChildData: Codable {
     let contestMode: Bool?
     let modReports: [JSONAny]?
     let authorPatreonFlair: Bool?
-    let authorFlairTextColor: FlairTextColor?
+    let authorFlairTextColor: String?
     let permalink: String?
     let parentWhitelistStatus: String? /// sd
     let stickied: Bool?
@@ -258,11 +258,11 @@ struct AllAwarding: Codable {
     let tiersByRequiredAwardings: [String: TiersByRequiredAwarding]?
     let resizedIcons: [ResizedIcon]
     let iconWidth, staticIconWidth: Int?
-    let startDate: JSONNull?
+    let startDate: Int?
     let isEnabled: Bool?
     let awardingsRequiredToGrantBenefits: Int?
     let allAwardingDescription: String?
-    let endDate: JSONNull?
+    let endDate: String?
     let subredditCoinReward, count, staticIconHeight: Int?
     let name: String?
     let resizedStaticIcons: [ResizedIcon]
@@ -448,7 +448,7 @@ struct CrosspostParentList: Codable {
     let contestMode: Bool?
     let modReports: [JSONAny]
     let authorPatreonFlair: Bool?
-    let authorFlairTextColor: JSONNull?
+    let authorFlairTextColor: String?
     let permalink: String?
     let parentWhitelistStatus: String?
     let stickied: Bool?

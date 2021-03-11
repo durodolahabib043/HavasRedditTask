@@ -20,6 +20,7 @@ class HomeViewModel {
         apiClient.getCartPromise().done {
             [weak self] result in
             guard let self = self else { return }
+            print("this is result \(result)")
             self.delegate?.didFetchDataSuccessfully(reddit: result)
 
         }.catch {
