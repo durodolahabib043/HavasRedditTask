@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Reddit22
 
-struct Reddit22: Codable {
+struct Reddit: Codable {
     let kind: String?
     let data: Reddit22Data?
 }
