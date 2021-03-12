@@ -8,15 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "RedditObjectiveCModel.h"
 
-//@interface RedditObjectiveCModel ()
-//
-//@property (nonatomic, copy) NSString *title;
-//@property (nonatomic, copy) NSString *upsVotes;
-//@property (nonatomic, copy) NSString *commnets;
-//@property (nonatomic, copy) NSString *imageUrl;
-//
-//@end
-
 @implementation RedditObjectiveCModel
 
 - (instancetype)initWithTitle:(NSString *)title

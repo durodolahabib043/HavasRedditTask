@@ -12,7 +12,7 @@ class CustomImageView: UIImageView {
 
         guard let url = URL(string: urlString) else { return }
 
-        image = nil
+        image = UIImage(named: "icons8-no-image-64")
 
         if let imageFromCache = imageCache.object(forKey: urlString as NSString) {
             image = imageFromCache

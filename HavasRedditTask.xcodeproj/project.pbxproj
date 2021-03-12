@@ -12,6 +12,8 @@
 		8249EC4E25F8FFA800E201B2 /* RedditViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8249EC4D25F8FFA800E201B2 /* RedditViewCell.swift */; };
 		8249EC5925F927F600E201B2 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8249EC5825F927F600E201B2 /* CustomImageView.swift */; };
 		8258903925FA5F17007F310E /* RedditObjectiveCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8258903825FA5F17007F310E /* RedditObjectiveCModel.m */; };
+		8258904D25FA91D3007F310E /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8258904C25FA91D3007F310E /* DetailedViewController.swift */; };
+		8258905325FA9A7C007F310E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8258905225FA9A7C007F310E /* Extensions.swift */; };
 		82627E2A25F9371900EF3219 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82627E2925F9371900EF3219 /* ApiClient.swift */; };
 		82627E2F25F9378A00EF3219 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82627E2E25F9378A00EF3219 /* HomeViewModel.swift */; };
 		82627E3425F95D9C00EF3219 /* Reddit22.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82627E3325F95D9C00EF3219 /* Reddit22.swift */; };
@@ -50,6 +52,8 @@
 		8258903725FA5F16007F310E /* HavasRedditTask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HavasRedditTask-Bridging-Header.h"; sourceTree = "<group>"; };
 		8258903825FA5F17007F310E /* RedditObjectiveCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedditObjectiveCModel.m; sourceTree = "<group>"; };
 		8258903D25FA61EB007F310E /* RedditObjectiveCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedditObjectiveCModel.h; sourceTree = "<group>"; };
+		8258904C25FA91D3007F310E /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		8258905225FA9A7C007F310E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		82627E2925F9371900EF3219 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		82627E2E25F9378A00EF3219 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		82627E3325F95D9C00EF3219 /* Reddit22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit22.swift; sourceTree = "<group>"; };
@@ -150,6 +154,14 @@
 			path = "ObjectiveC Class";
 			sourceTree = "<group>";
 		};
+		8258905125FA9A67007F310E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8258905225FA9A7C007F310E /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		82627E2525F936E500EF3219 /* ApiManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +195,7 @@
 		82D6138825F8F69B00045777 /* HavasRedditTask */ = {
 			isa = PBXGroup;
 			children = (
+				8258905125FA9A67007F310E /* Extensions */,
 				8258903225FA5DBE007F310E /* ObjectiveC Class */,
 				82627E2525F936E500EF3219 /* ApiManager */,
 				8249EC5725F91C9400E201B2 /* Custom */,
@@ -220,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				82D6138D25F8F69B00045777 /* HomeController.swift */,
+				8258904C25FA91D3007F310E /* DetailedViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -501,6 +515,8 @@
 				82627E2F25F9378A00EF3219 /* HomeViewModel.swift in Sources */,
 				8249EC5925F927F600E201B2 /* CustomImageView.swift in Sources */,
 				82D6138E25F8F69B00045777 /* HomeController.swift in Sources */,
+				8258905325FA9A7C007F310E /* Extensions.swift in Sources */,
+				8258904D25FA91D3007F310E /* DetailedViewController.swift in Sources */,
 				8258903925FA5F17007F310E /* RedditObjectiveCModel.m in Sources */,
 				82D6138A25F8F69B00045777 /* AppDelegate.swift in Sources */,
 				82627E2A25F9371900EF3219 /* ApiClient.swift in Sources */,

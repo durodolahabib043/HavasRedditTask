@@ -8,6 +8,7 @@ class HomeController: UIViewController, HomeViewDelegate {
     let tableView = UITableView()
     let cellIndentifier = "cellId"
     var redditArray = [Child]()
+    var redditObjC: RedditObjectiveCModel?
 
     // MARK: - LIFECYCLE
 
@@ -47,6 +48,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as! RedditViewCell
+        cell.selectionStyle = .none
 
         guard let redditData = redditArray[indexPath.row].data, let title = redditData.title,
               let likes = redditData.score, let comments = redditData.numComments
@@ -56,12 +58,33 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         cell.titleText.text = title
         cell.voteContText.text = "\(likes)"
         cell.commentText.text = "\(comments)"
-        let sdsd = RedditObjectiveCModel()
 
-        sdsd.commnets = ""
-
-        cell.child = redditData
+        cell.child = redditData // refactor
         return cell
+    }
+
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let redditData = redditArray[indexPath.row].data, let title = redditData.title,
+              let likes = redditData.score, let comments = redditData.numComments, let image = redditArray[indexPath.row].data?.thumbnail
+        else {
+            print("didSelectRowAt error")
+            return
+        }
+
+        redditObjC = RedditObjectiveCModel()
+        guard let reddit = redditObjC else {
+            print("didSelectRowAt error")
+            return
+        }
+
+        reddit.commnets = "\(comments)"
+        reddit.title = "\(title)"
+        reddit.upsVotes = "\(likes)"
+        reddit.imageUrl = "\(image)"
+
+        let detailsVC = DetailedViewController()
+        detailsVC.data = redditObjC
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
 
     func didFetchDataSuccessfully(reddit: Reddit22) {
