@@ -81,11 +81,16 @@ class RedditViewCell: UITableViewCell {
             guard let products = child else {
                 return
             }
-            guard let data = products.title,
-                  let image = products.thumbnail
+            guard let title = products.title,
+                  let image = products.thumbnail,
+                  let votes = products.score,
+                  let commments = products.numComments
             else {
                 return
             }
+            titleText.text = title
+            voteContText.text = "\(votes)"
+            commentText.text = "\(commments)"
             mainImage.loadImageUsingUrlString(urlString: image)
         }
     }
