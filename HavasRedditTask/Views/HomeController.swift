@@ -8,18 +8,25 @@ class HomeController: UIViewController, HomeViewDelegate {
     let tableView = UITableView()
     let cellIndentifier = "cellId"
     var redditArray = [Child]()
-    var redditObjC: RedditObjectiveCModel?
+    var redditObjC = RedditObjectiveCModel()
+    var alert = UIAlertController()
 
     // MARK: - LIFECYCLE
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        displayMessage(title: "Fetching data.......", message: "")
         view.backgroundColor = .white
         setupNav()
-        setupTableView()
+
         let homeVM = HomeViewModel()
         homeVM.delegate = self
         homeVM.fetchData()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupTableView()
     }
 
     // MARK: - HANDLES
@@ -50,37 +57,25 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as! RedditViewCell
         cell.selectionStyle = .none
 
-        guard let redditData = redditArray[indexPath.row].data, let title = redditData.title,
-              let likes = redditData.score, let comments = redditData.numComments
+        guard let redditData = redditArray[indexPath.row].data
         else {
             return cell
         }
-        cell.titleText.text = title
-        cell.voteContText.text = "\(likes)"
-        cell.commentText.text = "\(comments)"
-
-        cell.child = redditData // refactor
+        cell.child = redditData 
         return cell
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let redditData = redditArray[indexPath.row].data, let title = redditData.title,
               let likes = redditData.score, let comments = redditData.numComments, let image = redditArray[indexPath.row].data?.thumbnail
-        else {
-            print("didSelectRowAt error")
-            return
-        }
+        else { return }
 
         redditObjC = RedditObjectiveCModel()
-        guard let reddit = redditObjC else {
-            print("didSelectRowAt error")
-            return
-        }
 
-        reddit.commnets = "\(comments)"
-        reddit.title = "\(title)"
-        reddit.upsVotes = "\(likes)"
-        reddit.imageUrl = "\(image)"
+        redditObjC.commnets = "\(comments)"
+        redditObjC.title = "\(title)"
+        redditObjC.upsVotes = "\(likes)"
+        redditObjC.imageUrl = "\(image)"
 
         let detailsVC = DetailedViewController()
         detailsVC.data = redditObjC
@@ -89,14 +84,23 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
 
     func didFetchDataSuccessfully(reddit: Reddit22) {
         guard let child = reddit.data?.children else {
-            print("didFetchDataSuccessfully")
+            displayMessage(title: "Error Fetching Data", message: "")
             return
         }
         redditArray = child
         tableView.reloadData()
+        alert.dismiss(animated: true, completion: nil)
     }
 
     func didFetchDataSuccessfully(err: String) {
         print("err \(err)")
+        displayMessage(title: "\(err)", message: "")
+    }
+
+    func displayMessage(title: String, message: String) {
+        alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        DispatchQueue.main.async {
+            self.present(self.alert, animated: true)
+        }
     }
 }

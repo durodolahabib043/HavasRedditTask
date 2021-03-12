@@ -75,7 +75,6 @@ class DetailedViewController: UIViewController {
         guard let votes = data?.upsVotes, let title = data?.title, let image = data?.imageUrl else {
             return
         }
-        print("\(votes) votes \(title)")
         voteContText.text = votes
         titleText.text = title
         mainImage.loadImageUsingUrlString(urlString: image)
