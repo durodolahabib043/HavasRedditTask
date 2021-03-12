@@ -69,14 +69,18 @@ class DetailedViewController: UIViewController {
         commnetImage.image = UIImage(named: "icons8-comments-26")
         shareImage.image = UIImage(named: "icons8-share-24")
         saveImage.image = UIImage(named: "icons8-save-24")
+
+        titleText.font = UIFont.preferredFont(forTextStyle: .headline)
+        voteContText.font = UIFont.preferredFont(forTextStyle: .headline)
     }
 
     func displayContent() {
-        guard let votes = data?.upsVotes, let title = data?.title, let image = data?.imageUrl else {
+        guard let votes = data?.upsVotes, let title = data?.title, let image = data?.imageUrl, let comments = data?.commnets else {
             return
         }
         voteContText.text = votes
         titleText.text = title
         mainImage.loadImageUsingUrlString(urlString: image)
+        commentText.text = comments
     }
 }

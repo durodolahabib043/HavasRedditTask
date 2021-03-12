@@ -61,7 +61,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         else {
             return cell
         }
-        cell.child = redditData 
+        cell.child = redditData
         return cell
     }
 
@@ -82,7 +82,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 
-    func didFetchDataSuccessfully(reddit: Reddit22) {
+    func didFetchDataSuccessfully(reddit: Reddit) {
         guard let child = reddit.data?.children else {
             displayMessage(title: "Error Fetching Data", message: "")
             return

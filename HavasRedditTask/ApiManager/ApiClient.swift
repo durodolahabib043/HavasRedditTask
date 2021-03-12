@@ -9,14 +9,14 @@ import Foundation
 import PromiseKit
 
 class ApiClient {
-    func getCartPromise() -> Promise<Reddit22> {
+    func getCartPromise() -> Promise<Reddit> {
         let urlString = "https://www.reddit.com/.json"
 
         if let url = URL(string: urlString) {
             return firstly {
                 URLSession.shared.dataTask(.promise, with: url)
             }.compactMap {
-                try JSONDecoder().decode(Reddit22.self, from: $0.data)
+                try JSONDecoder().decode(Reddit.self, from: $0.data)
             }
         }
         return Promise {

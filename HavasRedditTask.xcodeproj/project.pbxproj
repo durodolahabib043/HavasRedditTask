@@ -16,7 +16,7 @@
 		8258905325FA9A7C007F310E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8258905225FA9A7C007F310E /* Extensions.swift */; };
 		82627E2A25F9371900EF3219 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82627E2925F9371900EF3219 /* ApiClient.swift */; };
 		82627E2F25F9378A00EF3219 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82627E2E25F9378A00EF3219 /* HomeViewModel.swift */; };
-		82627E3425F95D9C00EF3219 /* Reddit22.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82627E3325F95D9C00EF3219 /* Reddit22.swift */; };
+		82627E3425F95D9C00EF3219 /* Reddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82627E3325F95D9C00EF3219 /* Reddit.swift */; };
 		82D6138A25F8F69B00045777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6138925F8F69B00045777 /* AppDelegate.swift */; };
 		82D6138E25F8F69B00045777 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6138D25F8F69B00045777 /* HomeController.swift */; };
 		82D6139325F8F69E00045777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82D6139225F8F69E00045777 /* Assets.xcassets */; };
@@ -56,7 +56,7 @@
 		8258905225FA9A7C007F310E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		82627E2925F9371900EF3219 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		82627E2E25F9378A00EF3219 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		82627E3325F95D9C00EF3219 /* Reddit22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit22.swift; sourceTree = "<group>"; };
+		82627E3325F95D9C00EF3219 /* Reddit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.swift; sourceTree = "<group>"; };
 		82D6138625F8F69B00045777 /* HavasRedditTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HavasRedditTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D6138925F8F69B00045777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82D6138D25F8F69B00045777 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 		82D613CD25F8F7A800045777 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				82627E3325F95D9C00EF3219 /* Reddit22.swift */,
+				82627E3325F95D9C00EF3219 /* Reddit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -510,7 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82627E3425F95D9C00EF3219 /* Reddit22.swift in Sources */,
+				82627E3425F95D9C00EF3219 /* Reddit.swift in Sources */,
 				8249EC4E25F8FFA800E201B2 /* RedditViewCell.swift in Sources */,
 				82627E2F25F9378A00EF3219 /* HomeViewModel.swift in Sources */,
 				8249EC5925F927F600E201B2 /* CustomImageView.swift in Sources */,

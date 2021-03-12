@@ -1,5 +1,5 @@
 //
-//  Reddit22.swift
+//  Reddit.swift
 //  HavasRedditTask
 //
 //  Created by Habib Durodola on 2021-03-10.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Reddit22
+// MARK: - Reddit
 
 struct Reddit: Codable {
     let kind: String?

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol HomeViewDelegate: AnyObject {
-    func didFetchDataSuccessfully(reddit: Reddit22)
+    func didFetchDataSuccessfully(reddit: Reddit)
     func didFetchDataSuccessfully(err: String)
 }
 
