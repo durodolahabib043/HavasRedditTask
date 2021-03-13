@@ -72,6 +72,9 @@ class DetailedViewController: UIViewController {
 
         titleText.font = UIFont.preferredFont(forTextStyle: .headline)
         voteContText.font = UIFont.preferredFont(forTextStyle: .headline)
+
+        titleText.textColor = UIColor.setUIColor(red: 91, green: 112, blue: 167)
+        voteContText.textColor = UIColor.setUIColor(red: 91, green: 112, blue: 167)
     }
 
     func displayContent() {

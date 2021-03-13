@@ -61,6 +61,8 @@ class RedditViewCell: UITableViewCell {
         titleContainer.addSubview(downImageView)
         titleContainer.addSubview(titleText)
         titleContainer.addSubview(mainImage)
+        titleText.textColor = UIColor.setUIColor(red: 91, green: 112, blue: 167)
+        voteContText.textColor = UIColor.setUIColor(red: 91, green: 112, blue: 167)
         setupAutoContrainst()
     }
 
