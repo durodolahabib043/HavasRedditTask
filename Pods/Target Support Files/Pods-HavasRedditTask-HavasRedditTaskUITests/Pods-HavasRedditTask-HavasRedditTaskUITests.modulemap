@@ -1,0 +1,6 @@
+framework module Pods_HavasRedditTask_HavasRedditTaskUITests {
+  umbrella header "Pods-HavasRedditTask-HavasRedditTaskUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
