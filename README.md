@@ -1,10 +1,11 @@
 # HavasRedditTask
 
-![51lbj1](https://user-images.githubusercontent.com/10080531/111042882-8a9e3f00-840d-11eb-93fa-11144f3adb51.gif)
+![51od4s](https://user-images.githubusercontent.com/10080531/111077197-fe9c1e00-84c5-11eb-932d-0183e01b1507.gif)
 
 
 ## App Details
 1. This is built programmatically NO STORYBOARD 
+2. Animated the tableview to sliding in the cell 
 
 ## App Architecture
 This app uses the MVVM architecture
