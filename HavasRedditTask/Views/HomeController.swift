@@ -82,6 +82,17 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 
+    func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt _: IndexPath) {
+        let rotation = CATransform3DTranslate(CATransform3DIdentity, 0, 50, 0)
+        cell.layer.transform = rotation
+        cell.alpha = 0
+
+        UIView.animate(withDuration: 1.0) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1.0
+        }
+    }
+
     func didFetchDataSuccessfully(reddit: Reddit) {
         guard let child = reddit.data?.children else {
             displayMessage(title: "Error Fetching Data", message: "")
